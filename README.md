@@ -1,2 +1,2 @@
 # stepik_final_project
-Selenium Python quatomation testing
+Selenium Python automation testing
