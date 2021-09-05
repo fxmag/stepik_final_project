@@ -1,7 +1,7 @@
 from pages.base_page import BasePage
-from pages.main_page import MainPage #
+#from pages.main_page import MainPage #
 from pages.locators import LoginPageLocators
-from pages.locators import MainPageLocators #
+#from pages.locators import MainPageLocators #
 
 
 class LoginPage(BasePage):
@@ -11,9 +11,12 @@ class LoginPage(BasePage):
         self.should_be_register_form()  
 
     def should_be_login_url(self):
-        self.browser.find_element(*MainPageLocators.LOGIN_LINK).click() #
-        #instead of writing opening login for each test, move the above line to base_page and import here
+        #self.browser.find_element(*MainPageLocators.LOGIN_LINK).click() #открываем страницу логина, реализовываем на main_page
+
+        #instead of writing opening login for each test, move the above line to main_page or base_page and import here
         #self.browser.go_to_login_page()
+
+        #assert будет проверяться после открытия страницы логина на main_page
         assert "login" in self.browser.current_url, "should be login page, the url does not contain login"
         #нужно найти метод прочитать адрес строки и тогда проверить, есть ли там слово "login"
         # в should_be_login_url проверяем в assert не равена ли строка self.url через find строке login.  (!= -1)
